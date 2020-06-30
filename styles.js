@@ -1,10 +1,19 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-    container: {
+    bgimg: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#a61c1c',
         alignItems: 'center',
         justifyContent: 'center',
     },
+    shape: {
+
+    },
+    getLoans: {
+
+    },
+    intro: {
+
+    }
 });
