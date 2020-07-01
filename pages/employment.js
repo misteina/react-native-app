@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../styles';
 import { Picker } from '@react-native-community/picker';
-import { Text, TextInput, Button, View } from 'react-native'
+import { TextInput, Button, View } from 'react-native';
 
 
 export default function Employment(){
