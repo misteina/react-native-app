@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
-import * as Components from './pages';
+import * as Pages from './pages';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -21,19 +21,20 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName={initialScreen}>
-                <Stack.Screen name="GetStarted" component={Components.GetStarted} />
-                <Stack.Screen name="Register" component={Components.Register} />
-                <Stack.Screen name="Login" component={Components.Login} />
-                <Stack.Screen name="Home" component={Components.Home} />
-                <Stack.Screen name="Profile" component={Components.Profile} />
-                <Stack.Screen name="Procedure" component={Components.Procedure} />
-                <Stack.Screen name="Calculator" component={Components.Calculator} />
-                <Stack.Screen name="Employment" component={Components.Employment} />
-                <Stack.Screen name="LoanApplication" component={Components.LoanApplication} />
-                <Stack.Screen name="AccountDetails" component={Components.AccountDetails} />
-                <Stack.Screen name="CardDetails" component={Components.CardDetails} />
-                <Stack.Screen name="About" component={Components.About} />
-                <Stack.Screen name="ContactUs" component={Components.ContactUs} />
+                <Stack.Screen name="GetStarted" component={Pages.GetStarted} />
+                <Stack.Screen name="Register" component={Pages.SendVerificationCode} />
+                <Stack.Screen name="Register" component={Pages.Register} />
+                <Stack.Screen name="Login" component={Pages.Login} />
+                <Stack.Screen name="Home" component={Pages.Home} />
+                <Stack.Screen name="Profile" component={Pages.PersonalDetails} />
+                <Stack.Screen name="Procedure" component={Pages.LoanProcedure} />
+                <Stack.Screen name="Calculator" component={Pages.Calculator} />
+                <Stack.Screen name="Employment" component={Pages.Employment} />
+                <Stack.Screen name="LoanApplication" component={Pages.LoanApplication} />
+                <Stack.Screen name="AccountDetails" component={Pages.AccountDetails} />
+                <Stack.Screen name="CardDetails" component={Pages.CardDetails} />
+                <Stack.Screen name="About" component={Pages.About} />
+                <Stack.Screen name="ContactUs" component={Pages.ContactUs} />
             </Stack.Navigator>
         </NavigationContainer>
     );
