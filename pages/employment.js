@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles';
 import { Picker } from '@react-native-community/picker';
 import { TextInput, Button, View } from 'react-native';
 
 
 export default function Employment(){
-    const [employment, setEmployment] = useState('Employment Status');
-    const [company, setCompany] = useState('Employer Company Name');
-    const [income, setIncome] = useState('Monthly Income');
-    const [employmentDate, setEmploymentDate] = useState('Employment Date');
-    const [companyAddress, setCompanyAddress] = useState('Company Address');
-    const [state, setState] = useState('State');
-    const [city, setCity] = useState('City');
+    const [employment, setEmployment] = React.useState('Employment Status');
+    const [company, setCompany] = React.useState('Employer Company Name');
+    const [income, setIncome] = React.useState('Monthly Income');
+    const [employmentDate, setEmploymentDate] = React.useState('Employment Date');
+    const [companyAddress, setCompanyAddress] = React.useState('Company Address');
+    const [state, setState] = React.useState('State');
+    const [city, setCity] = React.useState('City');
 
     const submitDetails = () => {
         

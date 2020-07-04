@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles';
-import { TextInput, View, ImageBackground } from 'react-native';
+import { TextInput, View, ImageBackground, Button } from 'react-native';
 
 export default function Register(){
     const [verificationCode, setVerificationCode] = useState('Enter Verification Code');

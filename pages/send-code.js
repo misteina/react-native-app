@@ -4,12 +4,10 @@ import { TextInput, View } from 'react-native';
 
 
 export default function SendVerificationCode(){
-    const [phoneNumber, setPhoneNumber] = useState('Enter Verification Code');
-
     const sendCode = () => {
 
     }
-
+    
     return (
         <View>
             <Image source={require('../assets/img2.png')} />

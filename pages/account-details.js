@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from '../styles';
 import { Picker } from '@react-native-community/picker';
 import { TextInput, Button, View } from 'react-native';
 
 export default function AccountDetails({navigation}) {
-    const [bankAccount, setBankAccount] = useState('Enter Bank Account');
-    const [bank, setBank] = useState('Select Your Bank');
+    const [bankAccount, setBankAccount] = React.useState('Enter Bank Account');
+    const [bank, setBank] = React.useState('Select Your Bank');
 
     const submitDetails = () => {
 

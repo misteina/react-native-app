@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles';
 import { Text, TextInput, Button, View } from 'react-native';
 
 
 export default function Contact(){
-    const [name, setName] = useState('NAME');
-    const [email, setEmail] = useState('Email Address');
-    const [subject, setSubject] = useState('Subject');
-    const [message, setMessage] = useState('Message');
+    const [name, setName] = React.useState('NAME');
+    const [email, setEmail] = React.useState('Email Address');
+    const [subject, setSubject] = React.useState('Subject');
+    const [message, setMessage] = React.useState('Message');
 
     const sendMessage = () => {
 

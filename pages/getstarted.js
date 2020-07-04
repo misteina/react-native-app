@@ -3,15 +3,13 @@ import styles from '../styles';
 import { ImageBackground, Text, Button, Image } from 'react-native';
 
 export default function GetStarted({navigation}) {
-    const userStatus = async () => await AsyncStorage.getItem('status');
-
     const goToPage = () => {
         //AsyncStorage.setItem('status', 'Register');
         navigation.navigate('Register');
     }
 
-    if (userStatus() !== null){
-        return (
+    return (
+        <View>
             <ImageBackground source={'../assets/bgimg.svg'} style={styles.bgimg}>
                 <Image source={'../assets/shape.svg'} style={styles.shape} />
                 <Text style={styles.getLoans}>
@@ -22,8 +20,6 @@ export default function GetStarted({navigation}) {
                 </Text>
                 <Button title="GET STARTED" style={styles.button} onPress={goToPage} />
             </ImageBackground>
-        );
-    } else {
-        return null;
-    }
+        </View>
+    );
 }
