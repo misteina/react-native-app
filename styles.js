@@ -52,5 +52,42 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         paddingTop: 15,
         paddingBottom: 15
+    },
+    sendCode: {
+        width: '100%',
+        height: '100%',
+        minHeight: 500,
+        position: 'relative',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#dbdbdb'
+    },
+    bgLogo: {
+        //width: '50%',
+        height: '20%',
+        position: 'absolute',
+        top: '10%',
+        resizeMode: 'center'
+    },
+    welcome: {
+        fontSize: 20,
+        color: '#a61c1c',
+        fontWeight: 'bold'
+    },
+    words: {
+        fontSize: 15,
+        fontWeight:'bold',
+    },
+    details: {
+        marginTop: '5%',
+        width: '85%',
+        height: 50,
+        color: 'grey',
+        borderWidth: 1,
+        borderRadius: 4,
+        paddingLeft: 10,
+        fontSize: 15,
+        fontWeight: 'bold',
+        borderColor: '#a61c1c'
     }
 });

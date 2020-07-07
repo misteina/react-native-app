@@ -14,7 +14,7 @@ export default function Register(){
 
     return (
         <View>
-            <ImageBackground style={styles.bgimg} source={require('../assets/logo2.svg')}>
+            <ImageBackground style={styles.bgimg} source={require('../assets/logo2.png')}>
                 <TextInput
                     style={styles.details}
                     onChangeText={text => setVerificationCode(text)}

@@ -15,7 +15,7 @@ export default function Contact(){
 
     return (
         <View>
-            <Image style={styles.topLogo} source={require('../assets/logo2.svg')} />
+            <Image style={styles.topLogo} source={require('../assets/logo2.png')} />
             <Text>Phone Number:</Text>
             <Text>+234 814 300 3142</Text>
             <Text>Email Address:</Text>
