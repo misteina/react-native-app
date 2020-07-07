@@ -3,7 +3,7 @@ import { AsyncStorage } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import GetStarted from './pages/about';
+import GetStarted from './pages/getstarted';
 import SendVerificationCode from './pages/send-code';
 import Register from './pages/register';
 import Login from './pages/login';
@@ -22,8 +22,13 @@ import ContactUs from './pages/contact';
 const Stack = createStackNavigator();
 
 export default function App() {
-    const userStatus = (async () => await AsyncStorage.getItem('status'))();
+    let initialScreen = 'Blank';
+    let showHeader = 'none';
+    
+    const [userStatus, setUserStatus] = React.useState(null);
 
+    AsyncStorage.getItem('USER_STATUS').then(value => setUserStatus(value));
+        
     const Theme = {
         ...DefaultTheme,
         colors: {
@@ -34,18 +39,18 @@ export default function App() {
         },
     };
 
-    let initialScreen;
-    if (userStatus === null) {
+    if (userStatus === null){
         initialScreen = "Get Started";
-    } else if (userStatus === "registered") {
-        initialScreen = "Login";
+        showHeader = "none";
     } else {
-        initialScreen = "Register";
+        initialScreen = "Login";
+        showHeader = "screen";
     }
 
     return (
         <NavigationContainer theme={Theme}>
-            <Stack.Navigator initialRouteName={initialScreen}>
+            <Stack.Navigator initialRouteName={initialScreen} headerMode={showHeader}>
+                <Stack.Screen name="Blank" component={Blank} />
                 <Stack.Screen name="Get Started" component={GetStarted} />
                 <Stack.Screen name="Send Verification Code" component={SendVerificationCode} />
                 <Stack.Screen name="Register" component={Register} />
@@ -63,4 +68,8 @@ export default function App() {
             </Stack.Navigator>
         </NavigationContainer>
     );
+}
+
+function Blank(){
+    return null
 }

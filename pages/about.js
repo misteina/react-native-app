@@ -5,7 +5,7 @@ import { Text, Image, View } from 'react-native';
 export default function About(){
     return (
         <View>
-            <Image source={'../assets/logo2.svg'} />
+            <Image source={require('../assets/logo2.svg')} />
             <Text>
                 We are your premium financial partners, always ready to support your financial needs.
             </Text>

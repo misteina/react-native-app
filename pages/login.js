@@ -14,7 +14,7 @@ export default function Login(){
     return (
         <View>
             <ImageBackground source={require('../assets/logo2.svg')}>
-                <Image source={require('../assets/shape.svg')} />
+                <Image source={require('../assets/shape.png')} />
                 <Text>Welcome Back</Text>
                 <Text>Let's help you get the funds you need</Text>
                 <TextInput
