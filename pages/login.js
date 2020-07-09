@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styles from '../styles';
-import { Text, TextInput, Button, View, ImageBackground } from 'react-native';
+import Button from '../components/button';
+import Logo from '../components/logo';
+import { Text, TextInput, View, Image } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 export default function Login(){
@@ -12,11 +15,11 @@ export default function Login(){
     }
 
     return (
-        <View>
-            <ImageBackground source={require('../assets/logo2.png')}>
-                <Image source={require('../assets/shape.png')} />
-                <Text>Welcome Back</Text>
-                <Text>Let's help you get the funds you need</Text>
+        <View style={styles.view}>
+            <ScrollView contentContainerStyle={styles.scrollView}>
+                <Logo />
+                <Text style={styles.welcomeBack}>Welcome Back!</Text>
+                <Text style={styles.words}>Let's help you get the funds you need</Text>
                 <TextInput
                     style={styles.textInput}
                     onChangeText={text => setPhoneNumber(text)}
@@ -27,9 +30,9 @@ export default function Login(){
                     onChangeText={text => setPassword(text)}
                     value={password}
                 />
-                <Text>Forgot Password</Text>
+                <Text style={styles.forgotPassword}>Forgot Password?</Text>
                 <Button title="LOGIN" style={styles.button} onPress={login} />
-            </ImageBackground>
+            </ScrollView>
         </View>
     );
 }

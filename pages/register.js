@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styles from '../styles';
-import { TextInput, View, ImageBackground, Button } from 'react-native';
+import Button from '../components/button';
+import Logo from '../components/logo';
+import { TextInput, View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Register(){
     const [verificationCode, setVerificationCode] = useState('Enter Verification Code');
@@ -13,30 +16,31 @@ export default function Register(){
     }
 
     return (
-        <View>
-            <ImageBackground style={styles.bgimg} source={require('../assets/logo2.png')}>
+        <View style={styles.view}>
+            <ScrollView contentContainerStyle={styles.scrollView}>
+                <Logo />
                 <TextInput
-                    style={styles.details}
+                    style={styles.textInput}
                     onChangeText={text => setVerificationCode(text)}
                     value={verificationCode}
                 />
                 <TextInput
-                    style={styles.details}
+                    style={styles.textInput}
                     onChangeText={text => setBvn(text)}
                     value={bvn}
                 />
                 <TextInput
-                    style={styles.details}
+                    style={styles.textInput}
                     onChangeText={text => setPassword(text)}
                     value={password}
                 />
                 <TextInput
-                    style={styles.details}
+                    style={styles.textInput}
                     onChangeText={text => setConfirmPassword(text)}
                     value={confirmPassword}
                 />
                 <Button title="REGISTER" style={styles.button} onPress={register} />
-            </ImageBackground>
+            </ScrollView>
         </View>
     );
 }

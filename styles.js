@@ -41,7 +41,7 @@ export default StyleSheet.create({
     button: {
         position: 'absolute',
         bottom: 20,
-        width: '90%',
+        width: '85%',
         backgroundColor: '#a61c1c',
         borderRadius: 4,
         elevation: 4
@@ -50,8 +50,7 @@ export default StyleSheet.create({
         color: 'white',
         textAlign: 'center',
         fontWeight: 'bold',
-        paddingTop: 15,
-        paddingBottom: 15
+        paddingVertical: 15,
     },
     sendCode: {
         width: '100%',
@@ -63,7 +62,6 @@ export default StyleSheet.create({
         backgroundColor: '#dbdbdb'
     },
     bgLogo: {
-        //width: '50%',
         height: '20%',
         position: 'absolute',
         top: '10%',
@@ -78,16 +76,46 @@ export default StyleSheet.create({
         fontSize: 15,
         fontWeight:'bold',
     },
-    details: {
+    textInput: {
         marginTop: '5%',
         width: '85%',
-        height: 50,
+        height: '8%',
+        maxHeight: 50,
+        minHeight: 45,
         color: 'grey',
         borderWidth: 1,
         borderRadius: 4,
         paddingLeft: 10,
         fontSize: 15,
         fontWeight: 'bold',
-        borderColor: '#a61c1c'
+        borderColor: '#a61c1c',
+        backgroundColor: '#dbdbdb'
+    },
+    view: {
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#dbdbdb',
+    },
+    bgimg2: {
+        height: '20%',
+        minHeight: 100,
+        marginTop: '10%',
+        marginBottom: '5%',
+        resizeMode: 'center'
+    },
+    scrollView: {
+        width: '100%',
+        alignItems: 'center',
+        paddingBottom: '30%'
+    },
+    welcomeBack: {
+        color: '#a61c1c',
+        marginTop: '8%',
+        fontSize: 25,
+        fontWeight: 'bold'
+    },
+    forgotPassword: {
+        fontSize: 15,
+        marginTop: 10
     }
 });
