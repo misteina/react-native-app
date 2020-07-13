@@ -94,7 +94,7 @@ export default StyleSheet.create({
     view: {
         width: '100%',
         height: '100%',
-        backgroundColor: '#dbdbdb',
+        backgroundColor: '#ffffff',
     },
     bgimg2: {
         height: '20%',
@@ -117,5 +117,89 @@ export default StyleSheet.create({
     forgotPassword: {
         fontSize: 15,
         marginTop: 10
+    },
+    helloUser: {
+        width: '90%',
+        flexDirection: 'row',
+        marginTop: '2%',
+        marginBottom: '1%'
+    },
+    hello: {
+        fontSize: 30,
+        color: '#ed9a9a',
+        //textShadowColor: 'grey',
+        //textShadowRadius: 4,
+        //textShadowOffset: { width: 0, height: 1 }
+    },
+    name: {
+        color: '#a61c1c',
+        fontSize: 30,
+        fontWeight: 'bold'
+    },
+    activeLoan: {
+        width: '95%',
+        alignItems: 'center',
+        borderRadius: 6,
+        marginBottom: '2%',
+        paddingVertical: '10%',
+        backgroundColor: 'rgba(166, 28, 28, 0.60)'
+    },
+    activeLoanText: {
+        color: '#ffe3e0',
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+    activeLoanAmount: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 30,
+        zIndex: 1
+    },
+    activeLoanDate: {
+        color: 'white',
+        zIndex: 1
+    },
+    waveCase: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        height: '100%'
+    },
+    wave: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        bottom: 0,
+        resizeMode: 'stretch'
+    },
+    wave2: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        bottom: 0,
+        resizeMode: 'stretch'
+    },
+    getLoans: {
+        width: '95%',
+        height: '40%',
+        borderRadius: 6,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(166, 28, 28, 0.60)'
+    },
+    getLoanPic: {
+        //width: '50%',
+        height: '80%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        //flexDirection: 'row',
+        flex: 1,
+        resizeMode: 'contain'
+    },
+    getLoanText: {
+        flex: 1,
+        color: 'white',
+        fontSize: 20
     }
 });

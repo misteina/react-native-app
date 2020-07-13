@@ -8,25 +8,30 @@ export default function Home(){
     return (
         <View style={styles.view}>
             <ScrollView contentContainerStyle={styles.scrollView}>
-                <Text>Hello</Text><Text>, Andrew</Text>
-                <View>
-                    <Text>Active Loan</Text>
-                    <Text>$2,5000</Text>
-                    <Text>04/07</Text>
-                    <Image source={require('../assets/bg1.svg')} />
-                    <Image source={require('../assets/bg2.svg')} />
+                <View style={styles.helloUser}>
+                    <Text style={styles.hello}>Hello,</Text><Text style={styles.name}> Andrew</Text>
                 </View>
-                <View>
-                    <Image source={require('../assets/img.svg')} />
-                    <Text>Get loans for as low as 20%</Text>
+                <View style={styles.activeLoan}>
+                    <Text style={styles.activeLoanText}>Active Loan</Text>
+                    <Text style={styles.activeLoanAmount}>$2,500</Text>
+                    <Text style={styles.activeLoanDate}>04/07</Text>
+                    <View style={styles.waveCase}>
+                        <Image style={styles.wave} source={require('../assets/bg1.png')} />
+                        <Image style={styles.wave2} source={require('../assets/bg2.png')} />
+                    </View>
+                </View>
+                <View style={styles.getLoans}>
+                    <Image style={styles.getLoanPic} source={require('../assets/img.png')} />
+                    <Text style={styles.getLoanText}>Get loans for as low as 20% interest rate</Text>
                 </View>
                 <FlatList
                     data={DATA}
                     renderItem={({ item }) => <Item title={item.title} />}
                     keyExtractor={item => item.id}
                 />
-                <Text>More...</Text>
-                <Text>Hide</Text>
+                <View>
+                    <Text>More...</Text><Text>Hide</Text>
+                </View>
             </ScrollView>
         </View>
     );
