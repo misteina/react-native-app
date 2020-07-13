@@ -183,6 +183,7 @@ export default StyleSheet.create({
         width: '95%',
         height: '40%',
         borderRadius: 6,
+        marginBottom: '2%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
@@ -201,5 +202,49 @@ export default StyleSheet.create({
         flex: 1,
         color: 'white',
         fontSize: 20
+    },
+    loanHistory: {
+        width: '95%',
+        borderRadius: 6,
+        backgroundColor: 'rgba(166, 28, 28, 0.20)'
+    },
+    loanHistoryTitle: {
+        width: '100%',
+        color: 'white',
+        fontSize: 16,
+        textAlign: 'center',
+        borderTopLeftRadius: 6,
+        borderTopRightRadius: 6,
+        paddingVertical: 8,
+        backgroundColor: '#a61c1c'
+    },
+    noHistory: {
+        color: '#c98b8b',
+        marginVertical: 20
+    },
+    historyHeading: {
+        width: '100%',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        paddingVertical: 5,
+        backgroundColor: '#e3c1c1'
+    },
+    headingText: {
+        flex: 1,
+        color: '#a84848',
+        textAlign: 'center',
+        fontWeight: 'bold'
+    },
+    historyItem: {
+        width: '100%',
+        flexDirection: 'row',
+        borderTopWidth: 1,
+        borderColor: '#cc8989',
+        paddingVertical: 5,
+    },
+    historyData: {
+        flex: 1,
+        color: '#a84848',
+        textAlign: 'center',
     }
 });
