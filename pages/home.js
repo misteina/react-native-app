@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import styles from '../styles';
-import { Text, Image, ScrollView, FlatList, View } from 'react-native';
+import { Text, Image, ScrollView, FlatList, View, TouchableOpacity } from 'react-native';
 
 
 export default function Home(){
     const DATA = [
-        ['$5,000', '12-7-2020', 'Active'],
-        ['$6,000', '16-7-2020', 'Closed']
+        {key: 1, data: ['$5,000', '12-7-2020', 'Active']},
+        {key: 2, data: ['$6,000', '16-7-2020', 'Closed']},
+        {key: 3, data: ['$5,000', '12-7-2020', 'Active']},
+        { key: 4, data: ['$6,000', '16-7-2020', 'Closed'] },
+        { key: 5, data: ['$5,000', '12-7-2020', 'Active'] },
+        { key: 6, data: ['$5,000', '12-7-2020', 'Active'] },
+        { key: 7, data: ['$6,000', '16-7-2020', 'Closed'] },
+        
     ];
     return (
         <View style={styles.view}>
-            <ScrollView contentContainerStyle={styles.scrollView}>
+            <ScrollView contentContainerStyle={styles.homeScrollView}>
                 <View style={styles.helloUser}>
                     <Text style={styles.hello}>Hello,</Text><Text style={styles.name}> Andrew</Text>
                 </View>
@@ -37,17 +43,22 @@ export default function Home(){
                     <List data={DATA} />
                 </View>
             </ScrollView>
+            <View style={styles.footer}>
+                <TouchableOpacity style={styles.iconBox}>
+                    <Image style={styles.icon} source={require('../assets/home2.png')} />
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
 
-function List({data}){
+function List({data}){ 
     if (data.length > 0){
         return (
             <FlatList
                 data={data}
-                keyExtractor={(index) => 'item' + index}
-                renderItem={({ item }) => <Item data={item} />}
+                keyExtractor={(index) => 'item' + index.key}
+                renderItem={({ item }) => <Item data={item.data} />}
             />
         );
     } else {

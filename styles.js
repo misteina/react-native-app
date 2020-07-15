@@ -141,7 +141,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         borderRadius: 6,
         marginBottom: '2%',
-        paddingVertical: '10%',
+        paddingVertical: 20,
         backgroundColor: 'rgba(166, 28, 28, 0.60)'
     },
     activeLoanText: {
@@ -182,6 +182,7 @@ export default StyleSheet.create({
     getLoans: {
         width: '95%',
         height: '40%',
+        maxHeight: 150,
         borderRadius: 6,
         marginBottom: '2%',
         flexDirection: 'row',
@@ -190,11 +191,9 @@ export default StyleSheet.create({
         backgroundColor: 'rgba(166, 28, 28, 0.60)'
     },
     getLoanPic: {
-        //width: '50%',
         height: '80%',
         alignItems: 'center',
         justifyContent: 'center',
-        //flexDirection: 'row',
         flex: 1,
         resizeMode: 'contain'
     },
@@ -246,5 +245,29 @@ export default StyleSheet.create({
         flex: 1,
         color: '#a84848',
         textAlign: 'center',
+    },
+    footer: {
+        width: '100%',
+        height: '8%',
+        position: 'absolute',
+        bottom: 0,
+        backgroundColor: '#a61c1c'
+    },
+    homeScrollView: {
+        width: '100%',
+        alignItems: 'center',
+        paddingBottom: 150
+    },
+    iconBox: {
+        width: '20%',
+        height: '100%',
+        padding: 0,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    icon: {
+        width: '60%',
+        height: '60%',
+        resizeMode: 'center'
     }
 });
