@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles';
+import MenuBar from '../components/menubar';
 import { Text, Image, ScrollView, FlatList, View, TouchableOpacity } from 'react-native';
 
 
@@ -48,20 +49,7 @@ export default function Home(){
                     <List data={DATA} />
                 </View>
             </ScrollView>
-            <View style={styles.footer}>
-                <TouchableOpacity style={styles.iconBox}>
-                    <Image style={styles.iconHome} source={require('../assets/home.png')} />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.iconBox}>
-                    <Image style={styles.iconMessage} source={require('../assets/envelope2.png')} />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.iconBox}>
-                    <Image style={styles.iconCard} source={require('../assets/credit-card2.png')} />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.iconBox}>
-                    <Image style={styles.iconMore} source={require('../assets/more2.png')} />
-                </TouchableOpacity>
-            </View>
+            <MenuBar icon="home" />
         </View>
     );
 }

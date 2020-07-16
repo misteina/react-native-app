@@ -50,7 +50,7 @@ export default function App() {
 
     return (
         <NavigationContainer theme={Theme}>
-            <Stack.Navigator initialRouteName="Home" headerMode="float">
+            <Stack.Navigator initialRouteName="Loan Repayment" headerMode="float">
                 <Stack.Screen name="Blank" component={Blank} />
                 <Stack.Screen name="Get Started" component={GetStarted} />
                 <Stack.Screen name="Verification Code" component={SendVerificationCode} />
@@ -58,7 +58,7 @@ export default function App() {
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Personal Details" component={PersonalDetails} />
-                <Stack.Screen name="Procedure" component={LoanProcedure} />
+                <Stack.Screen name="Loan Procedure" component={LoanProcedure} />
                 <Stack.Screen name="Loan Repayment" component={LoanRepayment} />
                 <Stack.Screen name="Employment" component={Employment} />
                 <Stack.Screen name="Loan Application" component={LoanApplication} />

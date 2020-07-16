@@ -111,7 +111,7 @@ export default StyleSheet.create({
     scrollView: {
         width: '100%',
         alignItems: 'center',
-        paddingBottom: '30%'
+        paddingBottom: '20%'
     },
     menuScrollView: {
         width: '100%',
@@ -311,5 +311,30 @@ export default StyleSheet.create({
         width: '60%',
         height: '60%',
         resizeMode: 'center'
+    },
+    details: {
+        width: '95%',
+        height: '8%',
+        fontSize: 20,
+        color: '#363030',
+        fontWeight: 'bold',
+        paddingLeft: 10,
+        marginBottom: '5%',
+        borderBottomWidth: 1,
+        borderBottomColor: '#a61c1c'
+    },
+    fieldTitle: {
+        width: '95%',
+        textAlign: 'left',
+        fontWeight: 'bold',
+        fontSize: 15,
+        color: '#a61c1c'
+    },
+    procedureText: {
+        width: '95%',
+        marginTop: '10%',
+        fontSize: 20,
+        textAlign: 'center',
+        color: '#a61c1c'
     }
 });

@@ -1,47 +1,38 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import styles from '../styles';
 import Button from '../components/button';
-import { Text, View, ScrollView, TextInput, AsyncStorage } from 'react-native';
+import MenuBar from '../components/menubar';
+import { Text, View, ScrollView, TextInput, TouchableOpacity, Image, AsyncStorage } from 'react-native';
 
 
 export default function PersonalDetails(){
     const details = {
-        firstName: "First Name",
-        lastName: "Last Name",
-        email: "Email Address",
-        dateOfBirth: "Date Of Birth",
-        sex: "Sex",
-        maritalStatus: "Marital Status",
-        numberOfDependents: "Number Of Dependents",
-        homeAddress: "Home Address",
-        state: "State",
-        city: "City"
+        firstName: "",
+        lastName: "",
+        email: "",
+        dateOfBirth: "",
+        sex: "",
+        maritalStatus: "",
+        numberOfDependents: "",
+        homeAddress: "",
+        state: "",
+        city: ""
     }
 
     const [userDetails, setUserDetails] = useState(details);
 
     try {
-        AsyncStorage.getItem('personalDetails').then(details => setUserDetails(JSON.parse(details)));
+        AsyncStorage.getItem('PERSONAL_DETAILS').then(
+            details => {
+                if (details !== null){
+                    setUserDetails(JSON.parse(details))
+                }
+            }
+        ).catch(
+            () => {return}
+        );
     } catch (error) {
         // handle error
-    }
-    
-    const [firstName, setFirstName] = useState(userDetails.firstName);
-    const [lastName, setLastName] = useState(userDetails.lastName);
-    const [email, setEmail] = useState(userDetails.email);
-    const [dateOfBirth, setDateOfBirth] = useState(userDetails.dateOfBirth);
-    const [sex, setSex] = useState(userDetails.sex);
-    const [maritalStatus, setMaritalStatus] = useState(userDetails.maritalStatus);
-    const [numberOfDependents, setNumberOfDependents] = useState(userDetails.numberOfDependents);
-    const [homeAddress, setHomeAddress] = useState(userDetails.homeAddress);
-    const [state, setState] = useState(userDetails.state);
-    const [city, setCity] = useState(userDetails.city);
-
-    const updateButton = useRef();
-
-    const activateUpdateButton = (inputText, setInputState) => {
-        updateButton.current.disabled = false;
-        setInputState(inputText);
     }
 
     const updateDetails = () => {
@@ -50,68 +41,70 @@ export default function PersonalDetails(){
 
     return (
         <View style={styles.view}>
-            <ScrollView style={styles.scrollView}>
-                <Text>First Name</Text><Text>Last Name</Text>
+            <ScrollView contentContainerStyle={{...styles.scrollView, paddingBottom: '110%'}}>
+                <Text style={{...styles.fieldTitle, marginTop: '5%'}}>First Name</Text>
                 <TextInput
                     style={styles.details}
-                    onChangeText={text => activateUpdateButton(text, setFirstName)}
-                    value={firstName}
+                    onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, firstName: text }))}
+                    value={userDetails.firstName}
                 />
+                <Text style={styles.fieldTitle}>Last Name</Text>
                 <TextInput
                     style={styles.details}
-                    onChangeText={text => activateUpdateButton(text, setLastName)}
-                    value={lastName}
+                    onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, lastName: text }))}
+                    value={userDetails.lastName}
                 />
-                <Text>Email</Text>
+                <Text style={styles.fieldTitle}>Email</Text>
                 <TextInput
                     style={styles.details}
-                    onChangeText={text => activateUpdateButton(text, setEmail)}
-                    value={email}
+                    onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, email: text }))}
+                    value={userDetails.email}
                 />
-                <Text>Date Of Birth</Text>
+                <Text style={styles.fieldTitle}>Date Of Birth</Text>
                 <TextInput
                     style={styles.details}
-                    onChangeText={text => activateUpdateButton(text, setDateOfBirth)}
-                    value={dateOfBirth}
+                    onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, dateOfBirth: text }))}
+                    value={userDetails.dateOfBirth}
                 />
-                <Text>Sex</Text>
+                <Text style={styles.fieldTitle}>Sex</Text>
                 <TextInput
                     style={styles.details}
-                    onChangeText={text => activateUpdateButton(text, setSex)}
-                    value={sex}
+                    onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, sex: text }))}
+                    value={userDetails.sex}
                 />
-                <Text>Marital Status</Text>
+                <Text style={styles.fieldTitle}>Marital Status</Text>
                 <TextInput
                     style={styles.details}
-                    onChangeText={text => activateUpdateButton(text, setMaritalStatus)}
-                    value={maritalStatus}
+                    onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, maritalStatus: text }))}
+                    value={userDetails.maritalStatus}
                 />
-                <Text>Number of Dependents</Text>
+                <Text style={styles.fieldTitle}>Number of Dependents</Text>
                 <TextInput
                     style={styles.details}
-                    onChangeText={text => activateUpdateButton(text, setNumberOfDependents)}
-                    value={numberOfDependents}
+                    onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, numberOfDependents: text }))}
+                    value={userDetails.numberOfDependents}
                 />
-                <Text>Home Address</Text>
+                <Text style={styles.fieldTitle}>Home Address</Text>
                 <TextInput
                     style={styles.details}
-                    onChangeText={text => activateUpdateButton(text, setHomeAddress)}
-                    value={homeAddress}
+                    onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, homeAddress: text }))}
+                    value={userDetails.homeAddress}
                 />
-                <Text>State</Text>
+                <Text style={styles.fieldTitle}>State</Text>
                 <TextInput
                     style={styles.details}
-                    onChangeText={text => activateUpdateButton(text, setState)}
-                    value={state}
+                    onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, state: text }))}
+                    value={userDetails.state}
                 />
-                <Text>City</Text>
+                <Text style={styles.fieldTitle}>City</Text>
                 <TextInput
-                    style={styles.details}
-                    onChangeText={text => activateUpdateButton(text, setCity)}
-                    value={city}
+                    style={{...styles.details, marginBottom: 50}}
+                    onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, city: text }))}
+                    value={userDetails.city}
                 />
-                <Button title="UPDATE" ref={updateButton} disabled={true} style={styles.button} onPress={updateDetails} />
+                <Button title="UPDATE" style={{ position: 'relative' }} onPress={updateDetails} />
             </ScrollView>
+            <MenuBar icon="more" />
         </View>
     );
 }
