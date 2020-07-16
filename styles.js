@@ -96,6 +96,11 @@ export default StyleSheet.create({
         height: '100%',
         backgroundColor: '#ffffff',
     },
+    menuView: {
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#7a0d0d'
+    },
     bgimg2: {
         height: '20%',
         minHeight: 100,
@@ -107,6 +112,10 @@ export default StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         paddingBottom: '30%'
+    },
+    menuScrollView: {
+        width: '100%',
+        alignItems: 'center',
     },
     welcomeBack: {
         color: '#a61c1c',
@@ -197,10 +206,28 @@ export default StyleSheet.create({
         flex: 1,
         resizeMode: 'contain'
     },
+    getLoanBox: {
+        flex: 1,
+        paddingVertical: 20,
+    },
     getLoanText: {
         flex: 1,
         color: 'white',
-        fontSize: 20
+        fontSize: 18
+    },
+    getLoanButton: {
+        width: '60%',
+        maxWidth: 120,
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: 'white'
+    },
+    getLoanButtonText: {
+        color: 'white',
+        width: '100%',
+        paddingVertical: 10,
+        textAlign: 'center',
+        fontWeight: 'bold'
     },
     loanHistory: {
         width: '95%',
@@ -249,6 +276,7 @@ export default StyleSheet.create({
     footer: {
         width: '100%',
         height: '8%',
+        flexDirection: 'row',
         position: 'absolute',
         bottom: 0,
         backgroundColor: '#a61c1c'
@@ -259,13 +287,27 @@ export default StyleSheet.create({
         paddingBottom: 150
     },
     iconBox: {
-        width: '20%',
+        flex: 1,
         height: '100%',
-        padding: 0,
         alignItems: 'center',
         justifyContent: 'center',
     },
-    icon: {
+    iconHome: {
+        width: '55%',
+        height: '55%',
+        resizeMode: 'center'
+    },
+    iconMessage: {
+        width: '60%',
+        height: '60%',
+        resizeMode: 'center'
+    },
+    iconCard: {
+        width: '70%',
+        height: '70%',
+        resizeMode: 'center'
+    },
+    iconMore: {
         width: '60%',
         height: '60%',
         resizeMode: 'center'

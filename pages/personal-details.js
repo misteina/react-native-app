@@ -1,25 +1,29 @@
 import React, { useState, useRef } from 'react';
 import styles from '../styles';
-import { Text, View, Button, TextInput, AsyncStorage } from 'react-native';
+import Button from '../components/button';
+import { Text, View, ScrollView, TextInput, AsyncStorage } from 'react-native';
 
 
 export default function PersonalDetails(){
-    let userDetails;
+    const details = {
+        firstName: "First Name",
+        lastName: "Last Name",
+        email: "Email Address",
+        dateOfBirth: "Date Of Birth",
+        sex: "Sex",
+        maritalStatus: "Marital Status",
+        numberOfDependents: "Number Of Dependents",
+        homeAddress: "Home Address",
+        state: "State",
+        city: "City"
+    }
+
+    const [userDetails, setUserDetails] = useState(details);
+
     try {
-        userDetails = JSON.parse(async () => await AsyncStorage.getItem('personalDetails'));
+        AsyncStorage.getItem('personalDetails').then(details => setUserDetails(JSON.parse(details)));
     } catch (error) {
-        userDetails = {
-            firstName: "",
-            lastName: "",
-            email: "",
-            dateOfBirth: "",
-            sex: "",
-            maritalStatus: "",
-            numberOfDependents: "",
-            homeAddress: "",
-            state: "",
-            city: ""
-        }
+        // handle error
     }
     
     const [firstName, setFirstName] = useState(userDetails.firstName);
@@ -45,67 +49,69 @@ export default function PersonalDetails(){
     }
 
     return (
-        <View>
-            <Text>First Name</Text><Text>Last Name</Text>
-            <TextInput
-                style={styles.details}
-                onChangeText={text => activateUpdateButton(text, setFirstName)}
-                value={firstName}
-            />
-            <TextInput
-                style={styles.details}
-                onChangeText={text => activateUpdateButton(text, setLastName)}
-                value={lastName}
-            />
-            <Text>Email</Text>
-            <TextInput
-                style={styles.details}
-                onChangeText={text => activateUpdateButton(text, setEmail)}
-                value={email}
-            />
-            <Text>Date Of Birth</Text>
-            <TextInput
-                style={styles.details}
-                onChangeText={text => activateUpdateButton(text, setDateOfBirth)}
-                value={dateOfBirth}
-            />
-            <Text>Sex</Text>
-            <TextInput
-                style={styles.details}
-                onChangeText={text => activateUpdateButton(text, setSex)}
-                value={sex}
-            />
-            <Text>Marital Status</Text>
-            <TextInput
-                style={styles.details}
-                onChangeText={text => activateUpdateButton(text, setMaritalStatus)}
-                value={maritalStatus}
-            />
-            <Text>Number of Dependents</Text>
-            <TextInput
-                style={styles.details}
-                onChangeText={text => activateUpdateButton(text, setNumberOfDependents)}
-                value={numberOfDependents}
-            />
-            <Text>Home Address</Text>
-            <TextInput
-                style={styles.details}
-                onChangeText={text => activateUpdateButton(text, setHomeAddress)}
-                value={homeAddress}
-            />
-            <Text>State</Text>
-            <TextInput
-                style={styles.details}
-                onChangeText={text => activateUpdateButton(text, setState)}
-                value={state}
-            />
-            <Text>City</Text>
-            <TextInput
-                style={styles.details}
-                onChangeText={text => activateUpdateButton(text, setCity)}
-                value={city}
-            />
-            <Button title="UPDATE" ref={updateButton} disabled={true} style={styles.button} onPress={updateDetails} />
+        <View style={styles.view}>
+            <ScrollView style={styles.scrollView}>
+                <Text>First Name</Text><Text>Last Name</Text>
+                <TextInput
+                    style={styles.details}
+                    onChangeText={text => activateUpdateButton(text, setFirstName)}
+                    value={firstName}
+                />
+                <TextInput
+                    style={styles.details}
+                    onChangeText={text => activateUpdateButton(text, setLastName)}
+                    value={lastName}
+                />
+                <Text>Email</Text>
+                <TextInput
+                    style={styles.details}
+                    onChangeText={text => activateUpdateButton(text, setEmail)}
+                    value={email}
+                />
+                <Text>Date Of Birth</Text>
+                <TextInput
+                    style={styles.details}
+                    onChangeText={text => activateUpdateButton(text, setDateOfBirth)}
+                    value={dateOfBirth}
+                />
+                <Text>Sex</Text>
+                <TextInput
+                    style={styles.details}
+                    onChangeText={text => activateUpdateButton(text, setSex)}
+                    value={sex}
+                />
+                <Text>Marital Status</Text>
+                <TextInput
+                    style={styles.details}
+                    onChangeText={text => activateUpdateButton(text, setMaritalStatus)}
+                    value={maritalStatus}
+                />
+                <Text>Number of Dependents</Text>
+                <TextInput
+                    style={styles.details}
+                    onChangeText={text => activateUpdateButton(text, setNumberOfDependents)}
+                    value={numberOfDependents}
+                />
+                <Text>Home Address</Text>
+                <TextInput
+                    style={styles.details}
+                    onChangeText={text => activateUpdateButton(text, setHomeAddress)}
+                    value={homeAddress}
+                />
+                <Text>State</Text>
+                <TextInput
+                    style={styles.details}
+                    onChangeText={text => activateUpdateButton(text, setState)}
+                    value={state}
+                />
+                <Text>City</Text>
+                <TextInput
+                    style={styles.details}
+                    onChangeText={text => activateUpdateButton(text, setCity)}
+                    value={city}
+                />
+                <Button title="UPDATE" ref={updateButton} disabled={true} style={styles.button} onPress={updateDetails} />
+            </ScrollView>
         </View>
     );
 }

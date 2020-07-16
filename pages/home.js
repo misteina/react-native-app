@@ -31,7 +31,12 @@ export default function Home(){
                 </View>
                 <View style={styles.getLoans}>
                     <Image style={styles.getLoanPic} source={require('../assets/img.png')} />
-                    <Text style={styles.getLoanText}>Get loans for as low as 20% interest rate</Text>
+                    <View style={styles.getLoanBox}>
+                        <Text style={styles.getLoanText}>Get loans for as low as <Text style={{fontWeight: 'bold'}}>20%</Text> interest rate</Text>
+                        <TouchableOpacity style={styles.getLoanButton}>
+                            <Text style={styles.getLoanButtonText}>GET LOAN</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
                 <View style={styles.loanHistory}>
                     <Text style={styles.loanHistoryTitle}>Loan History</Text>
@@ -45,7 +50,16 @@ export default function Home(){
             </ScrollView>
             <View style={styles.footer}>
                 <TouchableOpacity style={styles.iconBox}>
-                    <Image style={styles.icon} source={require('../assets/home2.png')} />
+                    <Image style={styles.iconHome} source={require('../assets/home.png')} />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.iconBox}>
+                    <Image style={styles.iconMessage} source={require('../assets/envelope2.png')} />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.iconBox}>
+                    <Image style={styles.iconCard} source={require('../assets/credit-card2.png')} />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.iconBox}>
+                    <Image style={styles.iconMore} source={require('../assets/more2.png')} />
                 </TouchableOpacity>
             </View>
         </View>

@@ -16,6 +16,7 @@ import LoanApplication from './pages/loan-application';
 import AccountDetails from './pages/account-details';
 import CardDetails from './pages/card-details';
 import About from './pages/about';
+import Menu from './pages/menu';
 import ContactUs from './pages/contact';
 
 
@@ -64,6 +65,7 @@ export default function App() {
                 <Stack.Screen name="Account Details" component={AccountDetails} />
                 <Stack.Screen name="Card Details" component={CardDetails} />
                 <Stack.Screen name="About" component={About} />
+                <Stack.Screen name="Menu" component={Menu} />
                 <Stack.Screen name="Contact Us" component={ContactUs} />
             </Stack.Navigator>
         </NavigationContainer>
