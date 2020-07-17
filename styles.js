@@ -92,8 +92,7 @@ export default StyleSheet.create({
         paddingLeft: 10,
         fontSize: 15,
         fontWeight: 'bold',
-        borderColor: '#a61c1c',
-        backgroundColor: '#dbdbdb'
+        borderColor: '#a61c1c'
     },
     view: {
         width: '100%',
@@ -358,5 +357,16 @@ export default StyleSheet.create({
     repayFigure: {
         color: '#a61c1c',
         textAlign: 'right'
+    },
+    picker: {
+        width: '85%',
+        height: '8%',
+        maxHeight: 50,
+        minHeight: 45,
+        marginTop: '5%',
+        borderWidth: 3,
+        borderRadius: 4,
+        borderColor: '#a61c1c',
+        //backgroundColor: 'red'
     }
 });

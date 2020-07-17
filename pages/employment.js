@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles';
-import { Picker } from '@react-native-community/picker';
-import { TextInput, Button, View } from 'react-native';
+import Button from '../components/button';
+import { Picker, TextInput, ScrollView, View } from 'react-native';
 
 
 export default function Employment(){
@@ -18,47 +18,49 @@ export default function Employment(){
     }
 
     return (
-        <View>
-            <Picker
-                selectedValue={employment}
-                style={styles.picker}
-                onValueChange={(itemValue, itemIndex) => setEmployment(itemValue)}
-            >
-                <Picker.Item label="Employed" value="Employed" />
-                <Picker.Item label="Self-employed" value="Self-employed" />
-                <Picker.Item label="Unemployed" value="Unemployed" />
-            </Picker>
-            <TextInput 
-                style={styles.textInput}
-                onChangeText={text => setCompany(text)}
-                value={company}
-            />
-            <TextInput
-                style={styles.textInput}
-                onChangeText={text => setIncome(text)}
-                value={income}
-            />
-            <TextInput
-                style={styles.textInput}
-                onChangeText={text => setEmploymentDate(text)}
-                value={employmentDate}
-            />
-            <TextInput
-                style={styles.textInput}
-                onChangeText={text => setCompanyAddress(text)}
-                value={companyAddress}
-            />
-            <TextInput
-                style={styles.textInput}
-                onChangeText={text => setState(text)}
-                value={state}
-            />
-            <TextInput
-                style={styles.textInput}
-                onChangeText={text => setCity(text)}
-                value={city}
-            />
-            <Button title="SUMBIT" style={styles.button} onPress={submitDetails} />
+        <View style={styles.view}>
+            <ScrollView contentContainerStyle={styles.scrollView}>
+                <Picker
+                    selectedValue={employment}
+                    onValueChange={value => setEmployment(value)}
+                    style={styles.picker}
+                    mode="dropdown"
+                    itemStyle={{ color: 'red', fontWeight: '900', fontSize: 18, padding: 30 }}>
+                    <Picker.Item label="Right Hand" value="right" />
+                    <Picker.Item label="Left Hand" value="left" />
+                </Picker>
+                <TextInput
+                    style={styles.textInput}
+                    onChangeText={text => setCompany(text)}
+                    value={company}
+                />
+                <TextInput
+                    style={styles.textInput}
+                    onChangeText={text => setIncome(text)}
+                    value={income}
+                />
+                <TextInput
+                    style={styles.textInput}
+                    onChangeText={text => setEmploymentDate(text)}
+                    value={employmentDate}
+                />
+                <TextInput
+                    style={styles.textInput}
+                    onChangeText={text => setCompanyAddress(text)}
+                    value={companyAddress}
+                />
+                <TextInput
+                    style={styles.textInput}
+                    onChangeText={text => setState(text)}
+                    value={state}
+                />
+                <TextInput
+                    style={styles.textInput}
+                    onChangeText={text => setCity(text)}
+                    value={city}
+                />
+                <Button title="SUBMIT" onPress={submitDetails} />
+            </ScrollView>
         </View>
     );
 }
