@@ -6,9 +6,9 @@ import styles from '../styles';
 export default function Button({title, onPress, style}){
     let addStyle = null;
     if (typeof style !== 'undefined'){
-        addStyle = { ...styles.button, position: style.position };
+        addStyle = { ...styles.buttonLoose, ...style };
     } else {
-        addStyle = styles.button
+        addStyle = styles.buttonLoose;
     }
     return(
         <TouchableOpacity style={addStyle}>

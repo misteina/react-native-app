@@ -10,7 +10,7 @@ import Login from './pages/login';
 import Home from './pages/home';
 import PersonalDetails from './pages/personal-details';
 import LoanProcedure from './pages/loan-procedure';
-import LoanRepayment from './pages/loan-repayment';
+import RepayLoan from './pages/loan-repayment';
 import Employment from './pages/employment';
 import LoanApplication from './pages/loan-application';
 import AccountDetails from './pages/account-details';
@@ -59,7 +59,7 @@ export default function App() {
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Personal Details" component={PersonalDetails} />
                 <Stack.Screen name="Loan Procedure" component={LoanProcedure} />
-                <Stack.Screen name="Loan Repayment" component={LoanRepayment} />
+                <Stack.Screen name="Loan Repayment" component={RepayLoan} />
                 <Stack.Screen name="Employment" component={Employment} />
                 <Stack.Screen name="Loan Application" component={LoanApplication} />
                 <Stack.Screen name="Account Details" component={AccountDetails} />

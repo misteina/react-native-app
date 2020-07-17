@@ -38,14 +38,18 @@ export default StyleSheet.create({
         marginLeft: '5%',
         marginRight: '5%'
     },
-    button: {
-        position: 'absolute',
+    buttonStatic: {
+        position:'absolute',
         bottom: 20,
+        marginTop: 0
+    },
+    buttonLoose: {
         width: '85%',
+        marginTop: '10%',
         backgroundColor: '#a61c1c',
         borderRadius: 4,
         elevation: 4
-    },
+    }, 
     buttonText: {
         color: 'white',
         textAlign: 'center',
@@ -336,5 +340,23 @@ export default StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         color: '#a61c1c'
+    },
+    repay: {
+        width:'95%',
+        height: '30%',
+        flexDirection: 'row',
+    },
+    repayText: {
+        flex: 1,
+        color: '#2e2e2d',
+        fontWeight: 'bold',
+        fontSize: 20,
+        borderBottomWidth: 1,
+        textAlignVertical: 'bottom',
+        borderBottomColor: '#d9d9d9'
+    },
+    repayFigure: {
+        color: '#a61c1c',
+        textAlign: 'right'
     }
 });
