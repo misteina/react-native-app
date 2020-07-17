@@ -36,7 +36,7 @@ export default function PersonalDetails(){
     }
 
     const updateDetails = () => {
-
+        let hey = null;
     }
 
     return (
@@ -102,7 +102,7 @@ export default function PersonalDetails(){
                     onChangeText={text => setUserDetails(userDetails => ({ ...userDetails, city: text }))}
                     value={userDetails.city}
                 />
-                <Button title="UPDATE" style={{ position: 'relative' }} onPress={updateDetails} />
+                <Button title="UPDATE" onPress={updateDetails} />
             </ScrollView>
             <MenuBar icon="more" />
         </View>

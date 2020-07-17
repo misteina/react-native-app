@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from '../styles';
 import Button from '../components/button';
-import { Picker, TextInput, ScrollView, View } from 'react-native';
+import { Picker } from '@react-native-community/picker';
+import { TextInput, ScrollView, View } from 'react-native';
 
 
 export default function Employment(){
@@ -19,16 +20,18 @@ export default function Employment(){
 
     return (
         <View style={styles.view}>
-            <ScrollView contentContainerStyle={styles.scrollView}>
-                <Picker
-                    selectedValue={employment}
-                    onValueChange={value => setEmployment(value)}
-                    style={styles.picker}
-                    mode="dropdown"
-                    itemStyle={{ color: 'red', fontWeight: '900', fontSize: 18, padding: 30 }}>
-                    <Picker.Item label="Right Hand" value="right" />
-                    <Picker.Item label="Left Hand" value="left" />
-                </Picker>
+            <ScrollView contentContainerStyle={{...styles.scrollView, paddingBottom: '10%'}}>
+                <View style={styles.pickerBox}>
+                    <Picker
+                        selectedValue={employment}
+                        style={styles.picker}
+                        onValueChange={(itemValue, itemIndex) => setEmployment(itemValue)}
+                    >
+                        <Picker.Item label="Employed" value="employed" />
+                        <Picker.Item label="Self-employed" value="self" />
+                        <Picker.Item label="Unemployed" value="unemployed" />
+                    </Picker>
+                </View>
                 <TextInput
                     style={styles.textInput}
                     onChangeText={text => setCompany(text)}

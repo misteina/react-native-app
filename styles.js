@@ -358,15 +358,20 @@ export default StyleSheet.create({
         color: '#a61c1c',
         textAlign: 'right'
     },
-    picker: {
+    pickerBox: {
+        marginTop: '10%',
         width: '85%',
         height: '8%',
         maxHeight: 50,
         minHeight: 45,
-        marginTop: '5%',
-        borderWidth: 3,
+        borderWidth: 1,
         borderRadius: 4,
-        borderColor: '#a61c1c',
-        //backgroundColor: 'red'
+        borderColor: '#a61c1c'
+    },
+    picker: {
+        width: '100%',
+        height: '100%',
+        maxHeight: 50,
+        minHeight: 45
     }
 });
