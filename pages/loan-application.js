@@ -7,8 +7,8 @@ import { Text, TextInput, ScrollView, View } from 'react-native';
 
 
 export default function LoanApplication(){
-    const [amount, setAmount] = useState(0);
-    const [duration, setDuration] = useState('Set Duration');
+    const [amount, setAmount] = useState(null);
+    const [duration, setDuration] = useState(null);
     
     const applyForLoan = () => {
         
@@ -42,7 +42,7 @@ export default function LoanApplication(){
                         placeholder="Day"
                         placeholderTextColor="grey"
                         onChangeText={text => setDuration(text)}
-                    //value={duration}
+                        value={duration}
                     />
                     <TextInput
                         style={{ ...styles.textInput, ...styles.dateInput }}

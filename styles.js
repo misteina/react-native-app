@@ -438,5 +438,18 @@ export default StyleSheet.create({
         borderLeftWidth: 1,
         borderRightColor: '#a61c1c',
         borderLeftColor: '#a61c1c'
+    },
+    aboutLogo: {
+        height: '40%',
+        maxHeight: 80,
+        marginTop: '10%',
+        resizeMode: 'center',
+        marginBottom: 30
+    },
+    aboutText: {
+        width: '95%',
+        fontSize: 15,
+        textAlign: 'center',
+        paddingBottom: 10
     }
 });
