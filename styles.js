@@ -45,7 +45,7 @@ export default StyleSheet.create({
     },
     buttonLoose: {
         width: '85%',
-        marginTop: '10%',
+        marginTop: '5%',
         backgroundColor: '#a61c1c',
         borderRadius: 4,
         elevation: 4
@@ -86,7 +86,6 @@ export default StyleSheet.create({
         height: '8%',
         maxHeight: 50,
         minHeight: 45,
-        color: 'grey',
         borderWidth: 1,
         borderRadius: 4,
         paddingLeft: 10,
@@ -373,5 +372,71 @@ export default StyleSheet.create({
         height: '100%',
         maxHeight: 50,
         minHeight: 45
+    },
+    loanSummary: {
+        width: '95%',
+        marginTop: '5%',
+        borderWidth: 1,
+        borderRadius: 4,
+        borderColor: '#a61c1c'
+    },
+    loanSummaryTitle: {
+        width: '100%',
+        fontSize: 18,
+        color: '#a61c1c',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        paddingVertical: 5
+    },
+    summaryHeading: {
+        width: '100%',
+        flexDirection: 'row',
+        borderBottomWidth: 1,
+        borderTopWidth: 1,
+        borderColor: '#a61c1c'
+    },
+    summaryText: {
+        flex: 1,
+        color: '#121212',
+        fontWeight: 'bold',
+        paddingVertical: 5,
+        textAlign: 'center'
+    },
+    summaryItem: {
+        width: '100%',
+        flexDirection: 'row'
+    },
+    summaryData: {
+        flex: 1,
+        fontSize: 16,
+        paddingVertical: 5,
+        textAlign: 'center'
+    },
+    expand: {
+        width: '95%'
+    },
+    loanDuration: {
+        width: '100%',
+        fontSize: 18,
+        color: '#a61c1c',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginVertical: 5
+    },
+    dateBox: {
+        width: '95%',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    dateInput: {
+        width: '30%',
+        marginTop: 0
+    },
+    middleBorder: {
+        borderRightWidth: 1,
+        borderLeftWidth: 1,
+        borderRightColor: '#a61c1c',
+        borderLeftColor: '#a61c1c'
     }
 });
