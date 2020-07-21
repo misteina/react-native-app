@@ -50,7 +50,7 @@ export default function App() {
 
     return (
         <NavigationContainer theme={Theme}>
-            <Stack.Navigator initialRouteName="Menu" headerMode="float">
+            <Stack.Navigator initialRouteName="Contact Us" headerMode="float">
                 <Stack.Screen name="Blank" component={Blank} />
                 <Stack.Screen name="Get Started" component={GetStarted} />
                 <Stack.Screen name="Verification Code" component={SendVerificationCode} />

@@ -98,11 +98,6 @@ export default StyleSheet.create({
         height: '100%',
         backgroundColor: '#ffffff',
     },
-    menuView: {
-        width: '100%',
-        height: '100%',
-        backgroundColor: '#7a0d0d'
-    },
     bgimg2: {
         height: '20%',
         minHeight: 100,
@@ -278,6 +273,7 @@ export default StyleSheet.create({
     footer: {
         width: '100%',
         height: '8%',
+        minHeight: 40,
         flexDirection: 'row',
         position: 'absolute',
         bottom: 0,
@@ -451,5 +447,52 @@ export default StyleSheet.create({
         fontSize: 15,
         textAlign: 'center',
         paddingBottom: 10
+    },
+    menuScrollView: {
+        width: '100%',
+        height: '100%',
+        alignItems: 'center',
+        paddingTop: '10%',
+        backgroundColor: '#a61c1c'
+    },
+    menuOption: {
+        width: '100%',
+        marginBottom: '2%',
+        backgroundColor: '#781212'
+    },
+    optionText: {
+        width: '100%',
+        color: 'white',
+        fontSize: 20,
+        borderLeftWidth: 10,
+        borderLeftColor: '#5e0e0e',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        paddingVertical: '5%'
+    },
+    contactLogo: {
+        height: '20%',
+        resizeMode: 'center',
+        marginVertical: '5%'
+    },
+    field: {
+        width: '95%',
+        textAlign: 'left',
+        fontSize: 15
+    },
+    marginTop: {
+        marginTop: '5%'
+    },
+    multiLineText: {
+        width: '85%',
+        height: '30%',
+        marginTop: '5%',
+        borderWidth: 1,
+        borderRadius: 4,
+        padding: 10,
+        fontSize: 15,
+        fontWeight: 'bold',
+        textAlignVertical: 'top',
+        borderColor: '#a61c1c'
     }
 });
